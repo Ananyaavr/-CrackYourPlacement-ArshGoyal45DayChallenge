@@ -1,0 +1,24 @@
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        int i=0,k=nums.length-1;
+        Arrays.sort(nums);
+        while(i<=k)
+        {
+            int j=i+1;
+            if(nums[i]+nums[j]+nums[k]==0)
+            {
+                result.add(Arrays.asList(nums[i],nums[j],nums[k]));
+            }
+            else if(nums[i]+nums[j]+nums[k]<0)
+            {
+                i++;
+            }
+            else
+            {
+                k--;
+            }
+        }
+        return result;
+    }
+}
